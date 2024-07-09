@@ -3,48 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IFA - Ismaili Fahd Architecture</title>
+    <title>IFArch - Cabinet d'Architecture</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>IFA</h1>
-            <p>Ismaili Fahd Architecture</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#about">À Propos</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="about">
-        <h2>À Propos</h2>
-        <p>IFA (Ismaili Fahd Architecture) est un cabinet d'architecture dédié à la création d'espaces innovants et fonctionnels.</p>
-    </section>
-    
-    <section id="portfolio">
+
+<!-- Barre de navigation -->
+<nav>
+    <ul>
+        <li><a href="#about">À Propos</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Section À Propos -->
+<section id="about">
+    <div class="container">
+        <h2>À Propos de Nous</h2>
+        <p>Texte descriptif sur ton cabinet d'architecture.</p>
+    </div>
+</section>
+
+<!-- Section Portfolio -->
+<section id="portfolio">
+    <div class="container">
         <h2>Portfolio</h2>
-        <div class="portfolio-items">
-            <!-- Ajouter ici les images et descriptions de ton portfolio -->
+        <div class="gallery">
+            <!-- Intégrer ici tes photos de créativité -->
+            <img src="chemin/vers/ton/image1.jpg" alt="Description de l'image 1">
+            <img src="chemin/vers/ton/image2.jpg" alt="Description de l'image 2">
+            <!-- Ajoute d'autres images selon tes besoins -->
         </div>
-    </section>
-    
-    <section id="projects">
-        <h2>Projets</h2>
-        <div class="projects-items">
-            <!-- Ajouter ici les descriptions de tes projets -->
+    </div>
+</section>
+
+<!-- Section Schémas Architecturaux -->
+<section id="architectural-diagrams">
+    <div class="container">
+        <h2>Schémas Architecturaux</h2>
+        <div class="diagram">
+            <!-- Intégrer ici tes schémas architecturaux -->
+            <img src="chemin/vers/ton/schema1.jpg" alt="Description du schéma 1">
+            <img src="chemin/vers/ton/schema2.jpg" alt="Description du schéma 2">
+            <!-- Ajoute d'autres schémas selon tes besoins -->
         </div>
-    </section>
-    
-    <footer id="contact">
-        <h2>Contact</h2>
-        <p>Email: contact@ifarch.com</p>
-        <p>Téléphone: +212 6 00 00 00 00</p>
-    </footer>
+    </div>
+</section>
+
+<!-- Section Contact -->
+<section id="contact">
+    <div class="container">
+        <h2>Contactez-nous</h2>
+        <form action="submit.php" method="post">
+            <input type="text" name="name" placeholder="Nom complet" required>
+            <input type="email" name="email" placeholder="Adresse email" required>
+            <textarea name="message" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</section>
+
 </body>
 </html>
