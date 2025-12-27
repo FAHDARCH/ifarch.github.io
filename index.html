@@ -334,6 +334,7 @@
                 <textarea rows="3" placeholder="Objectifs, observation, matériel..." data-storage="rdv-notes"></textarea>
             </label>
             <p class="hint">Après 1h du rendez-vous, confirmez “fait” ou “pas fait” pour le comptabiliser.</p>
+            <div class="alert" id="rdv-alert" role="status" aria-live="polite"></div>
         </form>
         <div class="appointment-grid">
             <div class="appointment-card">
@@ -481,8 +482,21 @@
     </div>
 </footer>
 <script>
+    const storageAvailable = () => {
+        try {
+            const testKey = "__orthoplus__";
+            localStorage.setItem(testKey, testKey);
+            localStorage.removeItem(testKey);
+            return true;
+        } catch (error) {
+            return false;
+        }
+    };
+
+    const canStore = storageAvailable();
     const editableFields = document.querySelectorAll("[data-storage]");
     const loadValue = (field, key) => {
+        if (!canStore) return;
         const saved = localStorage.getItem(key);
         if (saved === null) return;
         if (field.isContentEditable) {
@@ -497,6 +511,7 @@
     };
 
     const saveValue = (field, key) => {
+        if (!canStore) return;
         const value = field.isContentEditable ? field.textContent.trim() : field.value;
         localStorage.setItem(key, value);
     };
@@ -508,12 +523,58 @@
         if (field.isContentEditable) {
             field.addEventListener("blur", () => saveValue(field, key));
             field.addEventListener("input", () => saveValue(field, key));
+            field.addEventListener("keyup", () => saveValue(field, key));
             return;
         }
 
         const eventType = field.tagName === "SELECT" ? "change" : "input";
         field.addEventListener(eventType, () => saveValue(field, key));
     });
+
+    const appointmentDate = document.querySelector("[data-storage=\"rdv-date\"]");
+    const appointmentTime = document.querySelector("[data-storage=\"rdv-heure\"]");
+    const appointmentConfirmation = document.querySelector("[data-storage=\"rdv-confirmation\"]");
+    const appointmentAlert = document.querySelector("#rdv-alert");
+
+    const updateAppointmentStatus = () => {
+        if (!appointmentDate || !appointmentTime || !appointmentConfirmation || !appointmentAlert) {
+            return;
+        }
+
+        const dateValue = appointmentDate.value;
+        const timeValue = appointmentTime.value;
+        appointmentAlert.textContent = "";
+        appointmentConfirmation.classList.remove("needs-confirmation");
+
+        if (!dateValue || !timeValue) {
+            return;
+        }
+
+        const appointmentMoment = new Date(`${dateValue}T${timeValue}`);
+        if (Number.isNaN(appointmentMoment.getTime())) {
+            appointmentAlert.textContent = "Veuillez vérifier la date et l'heure du rendez-vous.";
+            return;
+        }
+
+        const now = new Date();
+        const confirmationTime = new Date(appointmentMoment.getTime() + 60 * 60 * 1000);
+
+        if (now >= confirmationTime && appointmentConfirmation.value === "En attente") {
+            appointmentAlert.textContent = "Le rendez-vous doit être confirmé (fait / pas fait) pour comptabilisation.";
+            appointmentConfirmation.classList.add("needs-confirmation");
+        } else if (now < confirmationTime) {
+            appointmentAlert.textContent = "La confirmation sera requise 1h après l'heure du rendez-vous.";
+        }
+    };
+
+    ["input", "change"].forEach((eventName) => {
+        appointmentDate?.addEventListener(eventName, updateAppointmentStatus);
+        appointmentTime?.addEventListener(eventName, updateAppointmentStatus);
+        appointmentConfirmation?.addEventListener(eventName, updateAppointmentStatus);
+    });
+
+    setInterval(updateAppointmentStatus, 60000);
+    updateAppointmentStatus();
 </script>
 </body>
 </html>

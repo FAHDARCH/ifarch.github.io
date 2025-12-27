@@ -443,6 +443,20 @@ ul {
     border: 1px solid #ffd8a8;
 }
 
+.appointment-form .alert {
+    font-size: 13px;
+    color: #6b3d05;
+    background: #fff3bf;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #ffd43b;
+}
+
+.needs-confirmation {
+    border-color: #d9480f;
+    background: #fff4e6;
+}
+
 .form-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
