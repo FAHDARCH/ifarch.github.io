@@ -1,9 +1,9 @@
 :root {
     color-scheme: light;
-    --primary: #3f7bf6;
-    --primary-dark: #1e4fb8;
+    --primary: #f97316;
+    --primary-dark: #c2410c;
     --secondary: #f6f7fb;
-    --accent: #ffb347;
+    --accent: #22c55e;
     --text: #1c2330;
     --muted: #5f6b7a;
     --white: #ffffff;
@@ -42,7 +42,7 @@ ul {
 }
 
 .hero {
-    background: radial-gradient(circle at top left, #e9efff 0%, #f5f7fb 45%, #ffffff 100%);
+    background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.18) 0%, rgba(249, 115, 22, 0.15) 45%, #ffffff 100%);
     padding-bottom: 60px;
 }
 
@@ -67,7 +67,7 @@ ul {
     justify-content: center;
     width: 48px;
     height: 48px;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     color: var(--white);
     border-radius: 16px;
     font-weight: 700;
@@ -109,7 +109,7 @@ ul {
 .primary {
     background: var(--primary);
     color: var(--white);
-    box-shadow: 0 12px 24px rgba(63, 123, 246, 0.25);
+    box-shadow: 0 12px 24px rgba(249, 115, 22, 0.25);
 }
 
 .primary:hover {
@@ -256,7 +256,7 @@ ul {
 }
 
 .week-cell {
-    background: #f8faff;
+    background: #fff7ed;
     border-radius: 12px;
     padding: 10px;
     font-size: 12px;
@@ -285,7 +285,7 @@ ul {
 
 .save-note {
     margin-top: 20px;
-    background: #eef3ff;
+    background: #fef3c7;
     padding: 16px;
     border-radius: 12px;
     color: var(--muted);
@@ -312,6 +312,44 @@ ul {
     gap: 16px;
 }
 
+.field {
+    display: grid;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.field label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.patient-fields,
+.appointment-form {
+    display: grid;
+    gap: 12px;
+}
+
+.status-select {
+    border: none;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #ecfdf3;
+    color: #15803d;
+}
+
+.status-select.warning {
+    background: #fff4e6;
+    color: var(--warning);
+}
+
+.status-select.success {
+    background: #ebfbee;
+    color: var(--success);
+}
+
 .patient-card header {
     display: flex;
     justify-content: space-between;
@@ -320,8 +358,8 @@ ul {
 }
 
 .status {
-    background: #e7f5ff;
-    color: #1971c2;
+    background: #ecfdf3;
+    color: #15803d;
     padding: 6px 12px;
     border-radius: 999px;
     font-size: 12px;
@@ -361,8 +399,13 @@ ul {
 }
 
 .appointment-card.highlight {
-    border: 2px solid #d9e4ff;
-    background: #f8faff;
+    border: 2px solid #fde68a;
+    background: #fff7ed;
+}
+
+.appointment-card.editor {
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    background: #f5fff8;
 }
 
 .appointment-card ul {
@@ -420,8 +463,44 @@ textarea {
 
 input:focus,
 textarea:focus {
-    outline: 2px solid rgba(63, 123, 246, 0.2);
+    outline: 2px solid rgba(249, 115, 22, 0.2);
     border-color: var(--primary);
+}
+
+select {
+    width: 100%;
+    border: 1px solid #d0d7e2;
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: var(--white);
+    color: var(--text);
+}
+
+.agenda-form {
+    margin-top: 20px;
+    display: grid;
+    gap: 12px;
+}
+
+.agenda-form h4 {
+    font-size: 16px;
+}
+
+.agenda-row {
+    display: grid;
+    grid-template-columns: 90px repeat(4, 1fr);
+    gap: 10px;
+    align-items: center;
+    background: var(--secondary);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.agenda-row label {
+    font-weight: 600;
+    font-size: 13px;
 }
 
 footer {
@@ -467,5 +546,9 @@ footer {
 
     .week-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .agenda-row {
+        grid-template-columns: 1fr;
     }
 }

@@ -93,6 +93,51 @@
                     <div class="week-cell">14:15 - Consultation Sara H.</div>
                     <div class="week-cell">15:30 - Bilan écrit (3/3)</div>
                 </div>
+                <form class="agenda-form">
+                    <h4>Rendez-vous éditables</h4>
+                    <div class="agenda-row">
+                        <label>Lundi</label>
+                        <input type="time" value="09:00">
+                        <input type="text" value="Julie M.">
+                        <select>
+                            <option>Consultation</option>
+                            <option>Séance</option>
+                            <option>Bilan</option>
+                        </select>
+                        <select>
+                            <option>Confirmé (1h après)</option>
+                            <option>Non confirmé</option>
+                        </select>
+                    </div>
+                    <div class="agenda-row">
+                        <label>Mardi</label>
+                        <input type="time" value="10:30">
+                        <input type="text" value="Noah K.">
+                        <select>
+                            <option>Séance</option>
+                            <option>Consultation</option>
+                            <option>Bilan</option>
+                        </select>
+                        <select>
+                            <option>Confirmé (1h après)</option>
+                            <option>Non confirmé</option>
+                        </select>
+                    </div>
+                    <div class="agenda-row">
+                        <label>Mercredi</label>
+                        <input type="time" value="11:15">
+                        <input type="text" value="Bilan écrit (1/3)">
+                        <select>
+                            <option>Bilan</option>
+                            <option>Consultation</option>
+                            <option>Séance</option>
+                        </select>
+                        <select>
+                            <option>Confirmé (1h après)</option>
+                            <option>Non confirmé</option>
+                        </select>
+                    </div>
+                </form>
             </div>
             <div class="agenda-card">
                 <h3>Historique des semaines</h3>
@@ -132,58 +177,114 @@
             <article class="patient-card">
                 <header>
                     <div>
-                        <h3>Camille R.</h3>
-                        <p>7 ans · Bilan langage écrit</p>
+                        <div class="field">
+                            <label>Nom du patient</label>
+                            <input type="text" value="Camille R.">
+                        </div>
+                        <div class="field">
+                            <label>Âge et suivi</label>
+                            <input type="text" value="7 ans · Bilan langage écrit">
+                        </div>
                     </div>
-                    <span class="status">Suivi actif</span>
+                    <select class="status-select">
+                        <option>Suivi actif</option>
+                        <option>Bilan en attente</option>
+                        <option>Progression</option>
+                    </select>
                 </header>
-                <ul>
-                    <li><strong>Contact parent :</strong> Sophie R. · 06 12 34 56 78</li>
-                    <li><strong>Objectifs :</strong> fluidité de lecture, compréhension écrite</li>
-                    <li><strong>Dernière séance :</strong> 12/09 · consolidation phonologique</li>
-                </ul>
-                <div class="patient-tags">
-                    <span>Consultation</span>
-                    <span>Séances hebdo</span>
-                    <span>Bilan 2/3</span>
+                <div class="patient-fields">
+                    <div class="field">
+                        <label>Contact parent</label>
+                        <input type="text" value="Sophie R. · 06 12 34 56 78">
+                    </div>
+                    <div class="field">
+                        <label>Objectifs</label>
+                        <textarea rows="2">Fluidité de lecture, compréhension écrite</textarea>
+                    </div>
+                    <div class="field">
+                        <label>Dernière séance</label>
+                        <input type="text" value="12/09 · consolidation phonologique">
+                    </div>
+                    <div class="field">
+                        <label>Tags</label>
+                        <input type="text" value="Consultation · Séances hebdo · Bilan 2/3">
+                    </div>
                 </div>
                 <button class="ghost">Mettre à jour la fiche</button>
             </article>
             <article class="patient-card">
                 <header>
                     <div>
-                        <h3>Karim T.</h3>
-                        <p>34 ans · Bilan langage oral</p>
+                        <div class="field">
+                            <label>Nom du patient</label>
+                            <input type="text" value="Karim T.">
+                        </div>
+                        <div class="field">
+                            <label>Âge et suivi</label>
+                            <input type="text" value="34 ans · Bilan langage oral">
+                        </div>
                     </div>
-                    <span class="status warning">Bilan en attente</span>
+                    <select class="status-select warning">
+                        <option>Bilan en attente</option>
+                        <option>Suivi actif</option>
+                        <option>Progression</option>
+                    </select>
                 </header>
-                <ul>
-                    <li><strong>Motif :</strong> reprise de parole post AVC</li>
-                    <li><strong>Protocoles :</strong> praxies bucco-faciales, coordination souffle</li>
-                    <li><strong>Prochaine séance :</strong> 18/09 · bilan oral (1/3)</li>
-                </ul>
-                <div class="patient-tags">
-                    <span>Bilan oral</span>
-                    <span>1 séance planifiée</span>
+                <div class="patient-fields">
+                    <div class="field">
+                        <label>Motif</label>
+                        <input type="text" value="Reprise de parole post AVC">
+                    </div>
+                    <div class="field">
+                        <label>Protocoles</label>
+                        <textarea rows="2">Praxies bucco-faciales, coordination souffle</textarea>
+                    </div>
+                    <div class="field">
+                        <label>Prochaine séance</label>
+                        <input type="text" value="18/09 · bilan oral (1/3)">
+                    </div>
+                    <div class="field">
+                        <label>Tags</label>
+                        <input type="text" value="Bilan oral · 1 séance planifiée">
+                    </div>
                 </div>
                 <button class="ghost">Ajouter un compte rendu</button>
             </article>
             <article class="patient-card">
                 <header>
                     <div>
-                        <h3>Lina P.</h3>
-                        <p>12 ans · Séances de suivi</p>
+                        <div class="field">
+                            <label>Nom du patient</label>
+                            <input type="text" value="Lina P.">
+                        </div>
+                        <div class="field">
+                            <label>Âge et suivi</label>
+                            <input type="text" value="12 ans · Séances de suivi">
+                        </div>
                     </div>
-                    <span class="status success">Progression</span>
+                    <select class="status-select success">
+                        <option>Progression</option>
+                        <option>Suivi actif</option>
+                        <option>Bilan en attente</option>
+                    </select>
                 </header>
-                <ul>
-                    <li><strong>Programme :</strong> articulation / phonation</li>
-                    <li><strong>Dernier bilan :</strong> 05/08 · oral 3/3 terminé</li>
-                    <li><strong>Prochaine séance :</strong> 16/09 · atelier articulation</li>
-                </ul>
-                <div class="patient-tags">
-                    <span>Séances</span>
-                    <span>Historique complet</span>
+                <div class="patient-fields">
+                    <div class="field">
+                        <label>Programme</label>
+                        <input type="text" value="Articulation / phonation">
+                    </div>
+                    <div class="field">
+                        <label>Dernier bilan</label>
+                        <input type="text" value="05/08 · oral 3/3 terminé">
+                    </div>
+                    <div class="field">
+                        <label>Prochaine séance</label>
+                        <input type="text" value="16/09 · atelier articulation">
+                    </div>
+                    <div class="field">
+                        <label>Tags</label>
+                        <input type="text" value="Séances · Historique complet">
+                    </div>
                 </div>
                 <button class="ghost">Voir l'historique</button>
             </article>
@@ -241,6 +342,51 @@
                     </div>
                 </div>
             </div>
+            <div class="appointment-card editor">
+                <h3>Modifier un rendez-vous</h3>
+                <p>Chaque séance peut être confirmée 1h après la date prévue pour comptabiliser la finance.</p>
+                <div class="appointment-form">
+                    <div class="field">
+                        <label>Patient</label>
+                        <input type="text" value="Emma D.">
+                    </div>
+                    <div class="field">
+                        <label>Date & heure</label>
+                        <input type="datetime-local" value="2024-09-15T15:00">
+                    </div>
+                    <div class="field">
+                        <label>Type de séance</label>
+                        <select>
+                            <option>Consultation</option>
+                            <option>Séance</option>
+                            <option>Bilan</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Bilan (1 à 3 séances)</label>
+                        <select>
+                            <option>1 séance</option>
+                            <option>2 séances</option>
+                            <option>3 séances</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Type de bilan</label>
+                        <select>
+                            <option>Langage écrit</option>
+                            <option>Langage oral</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Confirmation 1h après</label>
+                        <select>
+                            <option>Confirmé (comptabilisé)</option>
+                            <option>Non confirmé</option>
+                            <option>À vérifier</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -258,26 +404,51 @@
         <div class="finance-grid">
             <div class="finance-card">
                 <h3>Encaissements</h3>
-                <p class="amount">8 240 €</p>
-                <p>Ce mois-ci · 92% des paiements reçus</p>
+                <div class="field">
+                    <label>Total du mois</label>
+                    <input type="text" value="8 240 €">
+                </div>
+                <div class="field">
+                    <label>Notes</label>
+                    <textarea rows="2">Ce mois-ci · 92% des paiements reçus</textarea>
+                </div>
             </div>
             <div class="finance-card">
                 <h3>Factures en attente</h3>
-                <p class="amount">620 €</p>
-                <p>Relances automatiques envoyées</p>
+                <div class="field">
+                    <label>Montant</label>
+                    <input type="text" value="620 €">
+                </div>
+                <div class="field">
+                    <label>Suivi</label>
+                    <textarea rows="2">Relances automatiques envoyées</textarea>
+                </div>
             </div>
             <div class="finance-card">
                 <h3>Dépenses cabinet</h3>
-                <p class="amount">1 130 €</p>
-                <p>Locaux, matériel, formations</p>
+                <div class="field">
+                    <label>Total</label>
+                    <input type="text" value="1 130 €">
+                </div>
+                <div class="field">
+                    <label>Détails</label>
+                    <textarea rows="2">Locaux, matériel, formations</textarea>
+                </div>
             </div>
             <div class="finance-card accent">
                 <h3>Tableau de bord</h3>
-                <ul>
-                    <li>Prévision trimestre : 24 500 €</li>
-                    <li>Reste à facturer : 3 200 €</li>
-                    <li>Suivi des mutuelles intégré</li>
-                </ul>
+                <div class="field">
+                    <label>Prévision trimestre</label>
+                    <input type="text" value="24 500 €">
+                </div>
+                <div class="field">
+                    <label>Reste à facturer</label>
+                    <input type="text" value="3 200 €">
+                </div>
+                <div class="field">
+                    <label>Notes</label>
+                    <textarea rows="2">Suivi des mutuelles intégré</textarea>
+                </div>
             </div>
         </div>
     </div>
