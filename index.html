@@ -26,13 +26,14 @@
         <button class="primary">Nouveau rendez-vous</button>
     </nav>
 
-        <div class="hero-content">
-            <div>
+    <div class="hero-content">
+        <div>
             <p class="eyebrow">Cabinet orthoplus + orthophonie</p>
             <h2>Un espace unique pour l'agenda, les dossiers patients et la gestion financière.</h2>
             <p class="hero-subtitle">
                 Organisez vos semaines, tracez l'évolution des bilans (1 à 3 séances) et pilotez vos revenus en temps réel.
             </p>
+            <div class="storage-status" id="storage-status" role="status" aria-live="polite"></div>
             <div class="hero-actions">
                 <button class="primary">Démarrer une semaine</button>
                 <button class="ghost">Importer un patient</button>
@@ -494,6 +495,13 @@
     };
 
     const canStore = storageAvailable();
+    const storageStatus = document.querySelector("#storage-status");
+    if (storageStatus) {
+        storageStatus.textContent = canStore
+            ? "Les modifications sont enregistrées localement dans ce navigateur."
+            : "Attention : la sauvegarde locale est désactivée sur cet appareil.";
+        storageStatus.classList.toggle("warning", !canStore);
+    }
     const editableFields = document.querySelectorAll("[data-storage]");
     const loadValue = (field, key) => {
         if (!canStore) return;

@@ -159,6 +159,22 @@ ul {
     margin-bottom: 24px;
 }
 
+.storage-status {
+    background: #fff8e1;
+    border: 1px solid #ffd8a8;
+    color: #6b3d05;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.storage-status.warning {
+    background: #fff1f0;
+    border-color: #ffa39e;
+    color: #a61d24;
+}
+
 .hero-actions {
     display: flex;
     gap: 16px;
