@@ -3,67 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IFArch - Cabinet d'Architecture</title>
+    <title>Orthoplus - Gestion de cabinet d'orthophonie</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<header class="hero" id="accueil">
+    <nav class="navbar">
+        <div class="brand">
+            <span class="brand-mark">O+</span>
+            <div>
+                <h1>Orthoplus</h1>
+                <p>Gestion complète du cabinet d'orthophonie</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#agenda">Agenda</a></li>
+            <li><a href="#patients">Patients</a></li>
+            <li><a href="#rendezvous">Rendez-vous</a></li>
+            <li><a href="#finance">Finance</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="primary">Nouveau rendez-vous</button>
+    </nav>
 
-<!-- Barre de navigation -->
-<nav>
-    <ul>
-        <li><a href="#about">À Propos</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<!-- Section À Propos -->
-<section id="about">
-    <div class="container">
-        <h2>À Propos de Nous</h2>
-        <p>Texte descriptif sur ton cabinet d'architecture.</p>
+    <div class="hero-content">
+        <div>
+            <p class="eyebrow">Cabinet orthoplus + orthophonie</p>
+            <h2>Un espace unique pour l'agenda, les dossiers patients et la gestion financière.</h2>
+            <p class="hero-subtitle">
+                Organisez vos semaines, tracez l'évolution des bilans (1 à 3 séances) et pilotez vos revenus en temps réel.
+            </p>
+            <div class="hero-actions">
+                <button class="primary">Démarrer une semaine</button>
+                <button class="ghost">Importer un patient</button>
+            </div>
+        </div>
+        <div class="hero-card">
+            <h3>Semaine en cours</h3>
+            <ul>
+                <li><strong>32</strong> rendez-vous planifiés</li>
+                <li><strong>8</strong> bilans de langage en cours</li>
+                <li><strong>5</strong> séances de suivi aujourd'hui</li>
+            </ul>
+            <div class="hero-metrics">
+                <div>
+                    <span>Recettes estimées</span>
+                    <strong>2 450 €</strong>
+                </div>
+                <div>
+                    <span>Impayés</span>
+                    <strong>120 €</strong>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+</header>
 
-<!-- Section Portfolio -->
-<section id="portfolio">
+<section id="agenda" class="section">
     <div class="container">
-        <h2>Portfolio</h2>
-        <div class="gallery">
-            <!-- Intégrer ici tes photos de créativité -->
-            <img src="chemin/vers/ton/image1.jpg" alt="Description de l'image 1">
-            <img src="chemin/vers/ton/image2.jpg" alt="Description de l'image 2">
-            <!-- Ajoute d'autres images selon tes besoins -->
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Agenda hebdomadaire</p>
+                <h2>Organisateur de rendez-vous par semaine</h2>
+                <p>Planifiez les consultations, séances et bilans avec sauvegarde automatique des semaines précédentes.</p>
+            </div>
+            <div class="week-switch">
+                <button class="ghost">Semaine précédente</button>
+                <button class="primary">Semaine actuelle</button>
+                <button class="ghost">Semaine suivante</button>
+            </div>
+        </div>
+        <div class="agenda-grid">
+            <div class="agenda-card">
+                <h3>Vue semaine</h3>
+                <div class="week-grid">
+                    <div class="week-header">Lun</div>
+                    <div class="week-header">Mar</div>
+                    <div class="week-header">Mer</div>
+                    <div class="week-header">Jeu</div>
+                    <div class="week-header">Ven</div>
+                    <div class="week-cell">09:00 - Consultation Julie M.</div>
+                    <div class="week-cell">10:30 - Séance Noah K.</div>
+                    <div class="week-cell">11:15 - Bilan écrit (1/3)</div>
+                    <div class="week-cell">09:30 - Séance Lila O.</div>
+                    <div class="week-cell">10:00 - Bilan oral (2/3)</div>
+                    <div class="week-cell">14:00 - Séance Adam B.</div>
+                    <div class="week-cell">15:00 - Consultation Emma D.</div>
+                    <div class="week-cell">16:30 - Séance collectif</div>
+                    <div class="week-cell">14:15 - Consultation Sara H.</div>
+                    <div class="week-cell">15:30 - Bilan écrit (3/3)</div>
+                </div>
+            </div>
+            <div class="agenda-card">
+                <h3>Historique des semaines</h3>
+                <ul class="archive">
+                    <li>
+                        <span>Semaine du 02 - 06 Septembre</span>
+                        <button class="ghost">Consulter</button>
+                    </li>
+                    <li>
+                        <span>Semaine du 26 - 30 Août</span>
+                        <button class="ghost">Consulter</button>
+                    </li>
+                    <li>
+                        <span>Semaine du 19 - 23 Août</span>
+                        <button class="ghost">Consulter</button>
+                    </li>
+                </ul>
+                <div class="save-note">
+                    <p>Sauvegarde automatique activée : chaque semaine est archivée et consultable.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Section Schémas Architecturaux -->
-<section id="architectural-diagrams">
+<section id="patients" class="section light">
     <div class="container">
-        <h2>Schémas Architecturaux</h2>
-        <div class="diagram">
-            <!-- Intégrer ici tes schémas architecturaux -->
-            <img src="chemin/vers/ton/schema1.jpg" alt="Description du schéma 1">
-            <img src="chemin/vers/ton/schema2.jpg" alt="Description du schéma 2">
-            <!-- Ajoute d'autres schémas selon tes besoins -->
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Dossiers patients</p>
+                <h2>Fiches patients complètes et toujours à jour</h2>
+                <p>Centralisez les informations, l'historique des rendez-vous et l'évolution du bilan.</p>
+            </div>
+            <button class="primary">Créer une fiche</button>
+        </div>
+        <div class="patient-grid">
+            <article class="patient-card">
+                <header>
+                    <div>
+                        <h3>Camille R.</h3>
+                        <p>7 ans · Bilan langage écrit</p>
+                    </div>
+                    <span class="status">Suivi actif</span>
+                </header>
+                <ul>
+                    <li><strong>Contact parent :</strong> Sophie R. · 06 12 34 56 78</li>
+                    <li><strong>Objectifs :</strong> fluidité de lecture, compréhension écrite</li>
+                    <li><strong>Dernière séance :</strong> 12/09 · consolidation phonologique</li>
+                </ul>
+                <div class="patient-tags">
+                    <span>Consultation</span>
+                    <span>Séances hebdo</span>
+                    <span>Bilan 2/3</span>
+                </div>
+                <button class="ghost">Mettre à jour la fiche</button>
+            </article>
+            <article class="patient-card">
+                <header>
+                    <div>
+                        <h3>Karim T.</h3>
+                        <p>34 ans · Bilan langage oral</p>
+                    </div>
+                    <span class="status warning">Bilan en attente</span>
+                </header>
+                <ul>
+                    <li><strong>Motif :</strong> reprise de parole post AVC</li>
+                    <li><strong>Protocoles :</strong> praxies bucco-faciales, coordination souffle</li>
+                    <li><strong>Prochaine séance :</strong> 18/09 · bilan oral (1/3)</li>
+                </ul>
+                <div class="patient-tags">
+                    <span>Bilan oral</span>
+                    <span>1 séance planifiée</span>
+                </div>
+                <button class="ghost">Ajouter un compte rendu</button>
+            </article>
+            <article class="patient-card">
+                <header>
+                    <div>
+                        <h3>Lina P.</h3>
+                        <p>12 ans · Séances de suivi</p>
+                    </div>
+                    <span class="status success">Progression</span>
+                </header>
+                <ul>
+                    <li><strong>Programme :</strong> articulation / phonation</li>
+                    <li><strong>Dernier bilan :</strong> 05/08 · oral 3/3 terminé</li>
+                    <li><strong>Prochaine séance :</strong> 16/09 · atelier articulation</li>
+                </ul>
+                <div class="patient-tags">
+                    <span>Séances</span>
+                    <span>Historique complet</span>
+                </div>
+                <button class="ghost">Voir l'historique</button>
+            </article>
         </div>
     </div>
 </section>
 
-<!-- Section Contact -->
-<section id="contact">
+<section id="rendezvous" class="section">
     <div class="container">
-        <h2>Contactez-nous</h2>
-        <form action="submit.php" method="post">
-            <input type="text" name="name" placeholder="Nom complet" required>
-            <input type="email" name="email" placeholder="Adresse email" required>
-            <textarea name="message" placeholder="Votre message" required></textarea>
-            <button type="submit">Envoyer</button>
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Types de rendez-vous</p>
+                <h2>Choisissez le type de séance et le format de bilan</h2>
+                <p>Paramétrez chaque rendez-vous en un clic : consultation, séance ou bilan (1 à 3 séances).</p>
+            </div>
+            <button class="primary">Configurer un rendez-vous</button>
+        </div>
+        <div class="appointment-grid">
+            <div class="appointment-card">
+                <h3>Consultation</h3>
+                <p>Premier échange ou point d'étape rapide.</p>
+                <ul>
+                    <li>Durée : 30 min</li>
+                    <li>Notes de consultation simplifiées</li>
+                    <li>Compte rendu automatique</li>
+                </ul>
+            </div>
+            <div class="appointment-card">
+                <h3>Séances</h3>
+                <p>Suivi régulier avec objectifs personnalisés.</p>
+                <ul>
+                    <li>Planification récurrente</li>
+                    <li>Exercices et supports</li>
+                    <li>Progression suivie</li>
+                </ul>
+            </div>
+            <div class="appointment-card highlight">
+                <h3>Bilan</h3>
+                <p>De 1 à 3 séances selon les besoins du patient.</p>
+                <div class="bilan-options">
+                    <div>
+                        <h4>Nombre de séances</h4>
+                        <div class="chips">
+                            <span>1 séance</span>
+                            <span>2 séances</span>
+                            <span>3 séances</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Type de bilan</h4>
+                        <div class="chips">
+                            <span>Langage écrit</span>
+                            <span>Langage oral</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="finance" class="section light">
+    <div class="container">
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Gestion financière</p>
+                <h2>Pilotez les recettes et dépenses du cabinet</h2>
+                <p>Suivi des encaissements, facturation et indicateurs financiers du cabinet d'orthophonie.</p>
+            </div>
+            <button class="primary">Exporter la comptabilité</button>
+        </div>
+        <div class="finance-grid">
+            <div class="finance-card">
+                <h3>Encaissements</h3>
+                <p class="amount">8 240 €</p>
+                <p>Ce mois-ci · 92% des paiements reçus</p>
+            </div>
+            <div class="finance-card">
+                <h3>Factures en attente</h3>
+                <p class="amount">620 €</p>
+                <p>Relances automatiques envoyées</p>
+            </div>
+            <div class="finance-card">
+                <h3>Dépenses cabinet</h3>
+                <p class="amount">1 130 €</p>
+                <p>Locaux, matériel, formations</p>
+            </div>
+            <div class="finance-card accent">
+                <h3>Tableau de bord</h3>
+                <ul>
+                    <li>Prévision trimestre : 24 500 €</li>
+                    <li>Reste à facturer : 3 200 €</li>
+                    <li>Suivi des mutuelles intégré</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Contact</p>
+                <h2>Nous contacter pour une démonstration</h2>
+                <p>Décrivez votre cabinet et vos besoins, nous vous répondrons rapidement.</p>
+            </div>
+        </div>
+        <form class="contact-form">
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Nom complet" required>
+                <input type="email" name="email" placeholder="Adresse email" required>
+            </div>
+            <input type="text" name="cabinet" placeholder="Nom du cabinet" required>
+            <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+            <button class="primary" type="submit">Envoyer la demande</button>
         </form>
     </div>
 </section>
 
+<footer>
+    <div class="container footer-content">
+        <div>
+            <h3>Orthoplus</h3>
+            <p>Plateforme dédiée à la gestion des cabinets d'orthophonie.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#agenda">Agenda</a>
+            <a href="#patients">Patients</a>
+            <a href="#finance">Finance</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-note">
+            <p>© 2024 Orthoplus. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
