@@ -140,34 +140,34 @@
                 <form class="patient-form">
                     <label>
                         Nom et prénom
-                        <input type="text" value="Camille R.">
+                        <input type="text" value="Camille R." data-storage="patient-1-name">
                     </label>
                     <label>
                         Âge
-                        <input type="number" value="7">
+                        <input type="number" value="7" data-storage="patient-1-age">
                     </label>
                     <label>
                         Type de bilan
-                        <select>
+                        <select data-storage="patient-1-bilan-type">
                             <option>Langage écrit</option>
                             <option>Langage oral</option>
                         </select>
                     </label>
                     <label>
                         Contact parent
-                        <input type="text" value="Sophie R. · 06 12 34 56 78">
+                        <input type="text" value="Sophie R. · 06 12 34 56 78" data-storage="patient-1-contact">
                     </label>
                     <label>
                         Objectifs
-                        <textarea rows="3">fluidité de lecture, compréhension écrite</textarea>
+                        <textarea rows="3" data-storage="patient-1-objectifs">fluidité de lecture, compréhension écrite</textarea>
                     </label>
                     <label>
                         Dernière séance
-                        <input type="text" value="12/09 · consolidation phonologique">
+                        <input type="text" value="12/09 · consolidation phonologique" data-storage="patient-1-derniere-seance">
                     </label>
                     <label>
                         Statut du patient
-                        <select>
+                        <select data-storage="patient-1-statut">
                             <option>Suivi actif</option>
                             <option>Bilan en attente</option>
                             <option>Progression</option>
@@ -175,9 +175,9 @@
                     </label>
                 </form>
                 <div class="patient-tags editable-tags">
-                    <span contenteditable="true">Consultation</span>
-                    <span contenteditable="true">Séances hebdo</span>
-                    <span contenteditable="true">Bilan 2/3</span>
+                    <span contenteditable="true" data-storage="patient-1-tag-1">Consultation</span>
+                    <span contenteditable="true" data-storage="patient-1-tag-2">Séances hebdo</span>
+                    <span contenteditable="true" data-storage="patient-1-tag-3">Bilan 2/3</span>
                 </div>
                 <button class="ghost">Mettre à jour la fiche</button>
             </article>
@@ -192,35 +192,35 @@
                 <form class="patient-form">
                     <label>
                         Nom et prénom
-                        <input type="text" value="Karim T.">
+                        <input type="text" value="Karim T." data-storage="patient-2-name">
                     </label>
                     <label>
                         Âge
-                        <input type="number" value="34">
+                        <input type="number" value="34" data-storage="patient-2-age">
                     </label>
                     <label>
                         Type de bilan
-                        <select>
+                        <select data-storage="patient-2-bilan-type">
                             <option>Langage oral</option>
                             <option>Langage écrit</option>
                         </select>
                     </label>
                     <label>
                         Motif
-                        <input type="text" value="reprise de parole post AVC">
+                        <input type="text" value="reprise de parole post AVC" data-storage="patient-2-motif">
                     </label>
                     <label>
                         Protocoles
-                        <textarea rows="3">praxies bucco-faciales, coordination souffle</textarea>
+                        <textarea rows="3" data-storage="patient-2-protocoles">praxies bucco-faciales, coordination souffle</textarea>
                     </label>
                     <label>
                         Prochaine séance
-                        <input type="text" value="18/09 · bilan oral (1/3)">
+                        <input type="text" value="18/09 · bilan oral (1/3)" data-storage="patient-2-prochaine-seance">
                     </label>
                 </form>
                 <div class="patient-tags editable-tags">
-                    <span contenteditable="true">Bilan oral</span>
-                    <span contenteditable="true">1 séance planifiée</span>
+                    <span contenteditable="true" data-storage="patient-2-tag-1">Bilan oral</span>
+                    <span contenteditable="true" data-storage="patient-2-tag-2">1 séance planifiée</span>
                 </div>
                 <button class="ghost">Ajouter un compte rendu</button>
             </article>
@@ -235,28 +235,28 @@
                 <form class="patient-form">
                     <label>
                         Nom et prénom
-                        <input type="text" value="Lina P.">
+                        <input type="text" value="Lina P." data-storage="patient-3-name">
                     </label>
                     <label>
                         Âge
-                        <input type="number" value="12">
+                        <input type="number" value="12" data-storage="patient-3-age">
                     </label>
                     <label>
                         Programme
-                        <input type="text" value="articulation / phonation">
+                        <input type="text" value="articulation / phonation" data-storage="patient-3-programme">
                     </label>
                     <label>
                         Dernier bilan
-                        <input type="text" value="05/08 · oral 3/3 terminé">
+                        <input type="text" value="05/08 · oral 3/3 terminé" data-storage="patient-3-dernier-bilan">
                     </label>
                     <label>
                         Prochaine séance
-                        <input type="text" value="16/09 · atelier articulation">
+                        <input type="text" value="16/09 · atelier articulation" data-storage="patient-3-prochaine-seance">
                     </label>
                 </form>
                 <div class="patient-tags editable-tags">
-                    <span contenteditable="true">Séances</span>
-                    <span contenteditable="true">Historique complet</span>
+                    <span contenteditable="true" data-storage="patient-3-tag-1">Séances</span>
+                    <span contenteditable="true" data-storage="patient-3-tag-2">Historique complet</span>
                 </div>
                 <button class="ghost">Voir l'historique</button>
             </article>
@@ -278,11 +278,11 @@
             <div class="form-row">
                 <label>
                     Patient
-                    <input type="text" placeholder="Nom du patient">
+                    <input type="text" placeholder="Nom du patient" data-storage="rdv-patient">
                 </label>
                 <label>
                     Type de rendez-vous
-                    <select>
+                    <select data-storage="rdv-type">
                         <option>Consultation</option>
                         <option>Séance</option>
                         <option>Bilan</option>
@@ -290,17 +290,17 @@
                 </label>
                 <label>
                     Date
-                    <input type="date">
+                    <input type="date" data-storage="rdv-date">
                 </label>
                 <label>
                     Heure
-                    <input type="time">
+                    <input type="time" data-storage="rdv-heure">
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     Séances de bilan (1 à 3)
-                    <select>
+                    <select data-storage="rdv-bilan-nombre">
                         <option>1 séance</option>
                         <option>2 séances</option>
                         <option>3 séances</option>
@@ -308,14 +308,14 @@
                 </label>
                 <label>
                     Type de bilan
-                    <select>
+                    <select data-storage="rdv-bilan-type">
                         <option>Langage écrit</option>
                         <option>Langage oral</option>
                     </select>
                 </label>
                 <label>
                     Confirmation après 1h
-                    <select>
+                    <select data-storage="rdv-confirmation">
                         <option>En attente</option>
                         <option>Fait</option>
                         <option>Pas fait</option>
@@ -323,7 +323,7 @@
                 </label>
                 <label>
                     Comptabilisation
-                    <select>
+                    <select data-storage="rdv-compta">
                         <option>À comptabiliser</option>
                         <option>Non comptabilisé</option>
                     </select>
@@ -331,7 +331,7 @@
             </div>
             <label>
                 Notes de séance
-                <textarea rows="3" placeholder="Objectifs, observation, matériel..."></textarea>
+                <textarea rows="3" placeholder="Objectifs, observation, matériel..." data-storage="rdv-notes"></textarea>
             </label>
             <p class="hint">Après 1h du rendez-vous, confirmez “fait” ou “pas fait” pour le comptabiliser.</p>
         </form>
@@ -394,48 +394,48 @@
                 <h3>Encaissements</h3>
                 <label>
                     Montant
-                    <input type="text" value="8 240 €">
+                    <input type="text" value="8 240 €" data-storage="finance-encaissements-montant">
                 </label>
                 <label>
                     Commentaire
-                    <input type="text" value="Ce mois-ci · 92% des paiements reçus">
+                    <input type="text" value="Ce mois-ci · 92% des paiements reçus" data-storage="finance-encaissements-note">
                 </label>
             </div>
             <div class="finance-card">
                 <h3>Factures en attente</h3>
                 <label>
                     Montant
-                    <input type="text" value="620 €">
+                    <input type="text" value="620 €" data-storage="finance-factures-montant">
                 </label>
                 <label>
                     Commentaire
-                    <input type="text" value="Relances automatiques envoyées">
+                    <input type="text" value="Relances automatiques envoyées" data-storage="finance-factures-note">
                 </label>
             </div>
             <div class="finance-card">
                 <h3>Dépenses cabinet</h3>
                 <label>
                     Montant
-                    <input type="text" value="1 130 €">
+                    <input type="text" value="1 130 €" data-storage="finance-depenses-montant">
                 </label>
                 <label>
                     Commentaire
-                    <input type="text" value="Locaux, matériel, formations">
+                    <input type="text" value="Locaux, matériel, formations" data-storage="finance-depenses-note">
                 </label>
             </div>
             <div class="finance-card accent">
                 <h3>Tableau de bord</h3>
                 <label>
                     Prévision trimestre
-                    <input type="text" value="24 500 €">
+                    <input type="text" value="24 500 €" data-storage="finance-prevision">
                 </label>
                 <label>
                     Reste à facturer
-                    <input type="text" value="3 200 €">
+                    <input type="text" value="3 200 €" data-storage="finance-reste">
                 </label>
                 <label>
                     Note financière
-                    <input type="text" value="Suivi des mutuelles intégré">
+                    <input type="text" value="Suivi des mutuelles intégré" data-storage="finance-note">
                 </label>
             </div>
         </div>
@@ -480,5 +480,40 @@
         </div>
     </div>
 </footer>
+<script>
+    const editableFields = document.querySelectorAll("[data-storage]");
+    const loadValue = (field, key) => {
+        const saved = localStorage.getItem(key);
+        if (saved === null) return;
+        if (field.isContentEditable) {
+            field.textContent = saved;
+            return;
+        }
+        if (field.tagName === "SELECT") {
+            field.value = saved;
+            return;
+        }
+        field.value = saved;
+    };
+
+    const saveValue = (field, key) => {
+        const value = field.isContentEditable ? field.textContent.trim() : field.value;
+        localStorage.setItem(key, value);
+    };
+
+    editableFields.forEach((field) => {
+        const key = field.dataset.storage;
+        loadValue(field, key);
+
+        if (field.isContentEditable) {
+            field.addEventListener("blur", () => saveValue(field, key));
+            field.addEventListener("input", () => saveValue(field, key));
+            return;
+        }
+
+        const eventType = field.tagName === "SELECT" ? "change" : "input";
+        field.addEventListener(eventType, () => saveValue(field, key));
+    });
+</script>
 </body>
 </html>
